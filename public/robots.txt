@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /privacy
+Allow: /terms
+Allow: /data-deletion
+Disallow: /admin
+Disallow: /cart
+Disallow: /checkout
+
+Sitemap: https://petmindapp.in/sitemap.xml
