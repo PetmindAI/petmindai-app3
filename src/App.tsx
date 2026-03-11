@@ -35,7 +35,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/login" element={<LoginPage />} />
-
+<Route path="/signup" element={<LoginPage />} />
         <Route
           path="/vet"
           element={!session ? <RegisterVet /> : <PetDashboard />}
