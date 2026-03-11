@@ -171,7 +171,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </Link>
             <span>•</span>
             <a
-              href="mailto:subratak236@gmail.com"
+              href="mailto:support@petmindapp.in"
               className="hover:text-amber-600 transition-colors"
             >
               Contact
