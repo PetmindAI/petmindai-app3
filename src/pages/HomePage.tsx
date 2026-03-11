@@ -1,14 +1,11 @@
 import React from 'react';
 import { Heart, Sparkles, ShoppingBag, Camera } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
-interface HomePageProps {
-  onNavigate: (page: string) => void;
-}
-
-const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
+const HomePage: React.FC = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white pb-20 pt-16">
       <div className="relative h-96 bg-gradient-to-br from-amber-400 via-orange-400 to-rose-400 overflow-hidden">
