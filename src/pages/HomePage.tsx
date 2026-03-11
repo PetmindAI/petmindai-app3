@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div
-            onClick={() => user ? onNavigate('assistant') : onNavigate('login')}
+            onClick={() => user ? navigate('/assistant') : navigate('/login')}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-amber-400"
           >
             <div className="flex items-center mb-4">
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div
-            onClick={() => user ? onNavigate('scanner') : onNavigate('login')}
+            onClick={() => user ? navigate('/scanner') : navigate('/login')}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-amber-400"
           >
             <div className="flex items-center mb-4">
