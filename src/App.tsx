@@ -8,7 +8,7 @@ import MarketplacePage from "./pages/MarketplacePage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import LoginPage from "./pages/LoginPage";
-
+import SignupPage from "./pages/SignupPage";
 import { RegisterVet } from "./RegisterVet";
 import { PetDashboard } from "./PetDashboard";
 
@@ -35,7 +35,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/login" element={<LoginPage />} />
-<Route path="/signup" element={<LoginPage />} />
+<Route path="/signup" element={<SignupPage />} />
         <Route
           path="/vet"
           element={!session ? <RegisterVet /> : <PetDashboard />}
