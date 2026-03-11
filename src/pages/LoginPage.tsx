@@ -196,12 +196,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
           <div className="mt-6 text-center space-y-3">
             <p className="text-gray-600">
               Don't have an account?{' '}
-              <button
-                onClick={() => onNavigate('signup')}
-                className="text-amber-600 hover:text-amber-700 font-bold"
-              >
-                Create new account
-              </button>
+             <button
+  onClick={() => window.location.href='/signup'}
+  className="text-amber-600 hover:text-amber-700 font-bold"
+>
+  Create new account
+</button>
             </p>
           </div>
         </div>
