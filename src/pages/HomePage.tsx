@@ -133,21 +133,19 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <p className="text-lg md:text-xl mb-6 opacity-90">
             Join thousands of happy pet parents who trust PetMind AI
           </p>
-          {user ? (
-            <button
-              onClick={() => onNavigate('marketplace')}
-              className="bg-white text-amber-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-50 transition-colors shadow-lg"
-            >
-              Explore Marketplace
-            </button>
-          ) : (
-            <button
-              onClick={() => onNavigate('signup')}
-              className="bg-white text-amber-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-50 transition-colors shadow-lg"
-            >
-              Get Started Free
-            </button>
-          )}
+         {user ? (
+  <Link to="/marketplace">
+    <button className="bg-white text-amber-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-50 transition-colors shadow-lg">
+      Explore Marketplace
+    </button>
+  </Link>
+) : (
+  <Link to="/login">
+    <button className="bg-white text-amber-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-50 transition-colors shadow-lg">
+      Get Started Free
+    </button>
+  </Link>
+)}
         </div>
       </div>
 
