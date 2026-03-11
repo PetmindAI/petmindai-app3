@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div
-            onClick={() => user ? navigate('/scanner') : navigate('/login')}
+            onClick={() => user ? navigate('/assistant') : navigate('/login')}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-amber-400"
           >
             <div className="flex items-center mb-4">
