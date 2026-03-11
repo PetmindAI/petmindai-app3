@@ -3,11 +3,9 @@ import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 
-interface LoginPageProps {
-  onNavigate: (page: string) => void;
-}
 
-const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
+
+const LoginPage: React.FC = () => {
   const { signInWithGoogle, signInWithFacebook, signInWithEmail } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -166,13 +164,13 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
               </div>
 
               <div className="text-right">
-                <button
-                  type="button"
-                  onClick={() => onNavigate('reset-password')}
-                  className="text-sm text-amber-600 hover:text-amber-700 font-medium"
-                >
-                  Forgot password?
-                </button>
+               <button
+  type="button"
+  onClick={() => window.location.href='/reset-password'}
+  className="text-sm text-amber-600 hover:text-amber-700 font-medium"
+>
+  Forgot password?
+</button>
               </div>
 
               <button
