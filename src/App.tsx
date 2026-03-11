@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { CartProvider } from "./contexts/CartContext";
 import { supabase } from "./supabaseClient";
 
 import HomePage from "./pages/HomePage";
@@ -25,7 +26,8 @@ function App() {
     });
   }, []);
 
-  return (
+return (
+  <CartProvider>
     <BrowserRouter>
       <Routes>
 
@@ -41,8 +43,10 @@ function App() {
           element={!session ? <RegisterVet /> : <PetDashboard />}
         />
 
-      </Routes>
+     </Routes>
     </BrowserRouter>
+  </CartProvider>
+);
   );
 }
 
