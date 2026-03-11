@@ -1,13 +1,20 @@
-import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
-import { RegisterVet } from './RegisterVet';
-import { PetDashboard } from './PetDashboard';
-import './index.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { supabase } from "./supabaseClient";
+
+import HomePage from "./pages/HomePage";
+import AIAssistantPage from "./pages/AIAssistantPage";
+import MarketplacePage from "./pages/MarketplacePage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import LoginPage from "./pages/LoginPage";
+
+import { RegisterVet } from "./RegisterVet";
+import { PetDashboard } from "./PetDashboard";
 
 function App() {
   const [session, setSession] = useState<any>(null);
 
-  // Check if a user is already logged in
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -19,23 +26,23 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h1>PetMind Vet Portal</h1>
-      
-      {!session ? (
-        // Show registration if not logged in
-        <div>
-          <p>Please register to access your dashboard.</p>
-          <RegisterVet />
-        </div>
-      ) : (
-        // Show the dashboard and a logout button if logged in
-        <div>
-          <button onClick={() => supabase.auth.signOut()} style={{ float: 'right' }}>Logout</button>
-          <PetDashboard />
-        </div>
-      )}
-    </div>
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/" element={<HomePage />} />
+        <Route path="/assistant" element={<AIAssistantPage />} />
+        <Route path="/marketplace" element={<MarketplacePage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/login" element={<LoginPage />} />
+
+        <Route
+          path="/vet"
+          element={!session ? <RegisterVet /> : <PetDashboard />}
+        />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
