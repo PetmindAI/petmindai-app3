@@ -79,7 +79,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           <div
-            onClick={() => user ? onNavigate('marketplace') : onNavigate('login')}
+           onClick={() => window.location.href = "/signup"}
             className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-amber-400"
           >
             <div className="flex items-center mb-4">
