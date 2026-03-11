@@ -4,6 +4,9 @@ import { useAuth } from '../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 
 
+
+
+
 const LoginPage: React.FC = () => {
   const { signInWithGoogle, signInWithFacebook, signInWithEmail } = useAuth();
   const [email, setEmail] = useState('');
